@@ -7,19 +7,47 @@
 	<script src="js/imgcache.js"></script>
 	<!-- only for cordova (replace by phonegap.js for phonegap) - ignore on desktop browser -->
 	<script src="cordova.js"></script>
-	 <script>
-        var loadImgCache = function() {
+	<script>
+		var loadImgCache = function() {
             // see console output for debug info
             ImgCache.options.debug = true;
 
             ImgCache.init(function() {
-                console.log('ImgCache initialised');
+            	console.log('ImgCache initialised');
+            	CacheImg("img1");
+            	CacheImg("img2");
+            	ImgCache.isCached($('#img1').attr('src'), function(path, success) {
+            		if(success)
+            		{
+            			$('#img1').css("border","2px solid green");
+            		}
+            		else
+            		{
+            			$('#img1').css("border","2px solid red");
+            		}
+            	});
+            	ImgCache.isCached($('#img2').attr('src'), function(path, success) {
+            		if(success)
+            		{
+            			$('#img2').css("border","2px solid green");
+            		}
+            		else
+            		{
+            			$('#img2').css("border","2px solid red");
+            		}
+            	});
+            	ImgCache.isCached($('#img3').attr('src'), function(path, success) {
+            		if(success)
+            		{
+            			$('#img3').css("border","2px solid green");
+            		}
+            		else
+            		{
+            			$('#img3').css("border","2px solid red");
+            		}
+            	});
             });
-            CacheImg("img1");
-            CacheImg("img2");
-            ImgCache.isCached($('#img1').attr('src'), function(path, success) {alert(success);});
-            ImgCache.isCached($('#img2').attr('src'), function(path, success) {alert(success);});
-            ImgCache.isCached($('#img3').attr('src'), function(path, success) {alert(success);});
+
 
         };
 
@@ -34,24 +62,22 @@
         {
         	var target = $('#'+id);
         	ImgCache.isCached(target.attr('src'), function(path, success) {
-			  if (success) {
-			    ImgCache.useCachedFile(target);
-			  } else {
-			    ImgCache.cacheFile(target.attr('src'), function () {
-			      ImgCache.useCachedFile(target);
-			    });
-			  }
-			});
+        		if (success) {
+        			ImgCache.useCachedFile(target);
+        		} else {
+        			ImgCache.cacheFile(target.attr('src'), function () {
+        				ImgCache.useCachedFile(target);
+        			});
+        		}
+        	});
         }
     </script>
 
 </head>
 
 <body>
-<img id="img1" src="https://via.placeholder.com/350x150" />
-<img id="img2" src="https://via.placeholder.com/350x250" />
-<img id="img3" src="https://via.placeholder.com/350x350" />
-
-
+	<img id="img1" src="https://via.placeholder.com/350x150" />
+	<img id="img2" src="https://via.placeholder.com/350x250" />
+	<img id="img3" src="https://via.placeholder.com/350x350" />
 </body>
 </html>
