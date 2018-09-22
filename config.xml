@@ -12,7 +12,7 @@
     <plugin name="cordova-plugin-file" source="npm" spec="~0.2.1" />
     <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
     <plugin name="cordova-plugin-device" source="npm" spec="~2.0.2" />
-    <plugin name="imgcache.js" source="npm" spec="~1.1.1" />
+   
 
      <platform name="android">
         <preference name="android-minSdkVersion" value="15" />
