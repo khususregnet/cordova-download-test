@@ -8,10 +8,10 @@
         DownloadTest
     </author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="cli-7.1.0" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.1" />
-    <plugin name="cordova-plugin-device" source="npm" spec="~2.0.2" />
+    <preference name="phonegap-version" value="cli-9.0.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm"/>
+    <plugin name="cordova-plugin-file-transfer" source="npm"/>
+    <plugin name="cordova-plugin-device" source="npm"/>
    
 
     <feature name="http://api.phonegap.com/1.0/file"/>
